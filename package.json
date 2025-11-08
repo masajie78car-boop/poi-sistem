@@ -1,0 +1,10 @@
+{
+  "name": "poi-sistem",
+  "version": "1.0.0",
+  "main": "api/handler.js",
+  "type": "module",
+  "dependencies": {
+    "firebase": "^10.4.0",
+    "node-fetch": "^3.3.2"
+  }
+}
