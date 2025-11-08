@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="id">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dashboard Admin</title></head>
+<body>
+  <h2>Dashboard</h2>
+  <p>Pilih Panel Lokasi:</p>
+  <ul>
+    <li><a href="/panel/mall/index.html">Mall Nusantara</a></li>
+    <li><a href="/panel/jatinegara/index.html">Stasiun Jatinegara</a></li>
+  </ul>
+  <button id="logout">Logout</button>
+<script type="module">
+import { getAuth, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js';
+const auth = getAuth();
+onAuthStateChanged(auth,user=>{ if(!user) location.href='/login.html'; });
+document.getElementById('logout').onclick = ()=> signOut(auth).then(()=> location.href='/login.html');
+</script>
+</body>
+</html>
