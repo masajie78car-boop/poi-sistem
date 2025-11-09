@@ -2,9 +2,9 @@
   "name": "poi-sistem",
   "version": "1.0.0",
   "type": "module",
-  "main": "login.html",
+  "main": "index.html",
   "scripts": {
-    "start": "node login.html"
+    "start": "node index.html"
   },
   "dependencies": {
     "express": "^4.18.2",
