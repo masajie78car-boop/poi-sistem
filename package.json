@@ -1,10 +1,10 @@
 {
-  "name": "poi-taxi-multilokasi",
+  "name": "poi-sistem",
   "version": "1.0.0",
   "type": "module",
-  "main": "index.js",
+  "main": "login.html",
   "scripts": {
-    "start": "node index.js"
+    "start": "node login.html"
   },
   "dependencies": {
     "express": "^4.18.2",
