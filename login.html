@@ -1,33 +1,10 @@
 <!DOCTYPE html>
-<html lang="id">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Login Admin</title></head>
-<body>
-  <h2>Login Admin</h2>
-  <input id="email" placeholder="Email"><br>
-  <input id="pass" type="password" placeholder="Password"><br>
-  <button id="btn">Login</button>
-  <p id="note"></p>
-<script type="module">
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js';
-import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js';
-const firebaseConfig = {
-  apiKey: "AIzaSyCZ-hruI3CTyKeBtqqmNoIBFNBPw1h6Sbo",
-  authDomain: "poi-sistem.firebaseapp.com",
-  projectId: "poi-sistem",
-  databaseURL: "https://poi-sistem-default-rtdb.asia-southeast1.firebasedatabase.app"
-};
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-document.getElementById('btn').onclick = async ()=>{
-  const email = document.getElementById('email').value.trim();
-  const pass = document.getElementById('pass').value;
-  try{
-    await signInWithEmailAndPassword(auth,email,pass);
-    location.href = '/dashboard/index.html';
-  } catch(e){
-    document.getElementById('note').innerText = 'Login gagal: ' + e.message;
-  }
-};
-</script>
-</body>
-</html>
+<html><head><style>
+body{margin:0;padding:0;background-image:url('https://ibb.co.com/xqGVLrbr');
+background-size:cover;background-position:center;height:100vh;
+display:flex;justify-content:center;align-items:center;font-family:Arial;}
+button{padding:15px 35px;font-size:24px;background:rgba(0,0,0,0.6);
+color:white;border:none;border-radius:10px;}
+button:hover{background:rgba(0,0,0,0.8);}
+</style></head>
+<body><button onclick="window.location.href='/login-form.html'">LOGIN</button></body></html>
