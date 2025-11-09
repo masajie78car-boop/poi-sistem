@@ -1,5 +1,36 @@
 <!DOCTYPE html>
 <html><head><style>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+
+// ===== MASUKKAN FIREBASE CONFIG ANDA DI SINI =====
+const firebaseConfig = {
+  apiKey: "AIzaSyCZ-hruI3CTyKeBtqqmNoIBFNBPw1h6Sbo",
+  authDomain: "poi-taxi.firebaseapp.com",
+  projectId: "poi-taxi",
+  storageBucket: "poi-taxi.firebasestorage.app",
+  messagingSenderId: "774582687333",
+  appId: "1:774582687333:web:ee95e1e3e705beaee4d88c"
+};
+// =================================================
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+document.getElementById("loginBtn").addEventListener("click", () => {
+  const email = document.getElementById("email").value;
+  const pass = document.getElementById("password").value;
+
+  signInWithEmailAndPassword(auth, email, pass)
+    .then(() => {
+      window.location.href = "/dashboard/index.html";  
+    })
+    .catch(err => {
+      alert("Login gagal: " + err.message);
+    });
+});
+</script>
 body{margin:0;padding:0;background:linear-gradient(135deg, cyan, #00ff88);
 height:100vh;display:flex;justify-content:center;align-items:center;font-family:Arial;}
 .container{background:white;padding:25px;width:90%;max-width:350px;border-radius:12px;
